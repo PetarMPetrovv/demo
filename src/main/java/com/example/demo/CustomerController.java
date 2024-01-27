@@ -26,11 +26,4 @@ public class CustomerController {
         return "readingList";
     }
 
-    @RequestMapping(value="/{reader}", method=RequestMethod.POST)
-    public String addToReadingList(
-            @PathVariable("reader") String reader, Book book) {
-        book.setReader(reader);
-        readingListRepository.save(book);
-        return "redirect:/{reader}";
-    }
 }
