@@ -5,6 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
+
 @Controller
 @RequestMapping("/")
 public class CustomerController {
@@ -16,10 +19,10 @@ public class CustomerController {
     }
     @RequestMapping(value="/{customer}", method=RequestMethod.GET)
     public String customers(
-            @PathVariable("customer") String reader,
+            @PathVariable("customer") String customer,
             Model model) {
-        List<Book> readingList =
-                readingListRepository.findByReader(reader);
+        List<Customer> customers =
+                customerRepository.findByReader(reader);
         if (readingList != null) {
             model.addAttribute("books", readingList);
         }
