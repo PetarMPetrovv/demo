@@ -1,9 +1,6 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,6 +11,7 @@ public class Customer {
     private String name;
     private String phoneNumber;
     private String linkToPropertyAd;
+    @ElementCollection
     private List<String> callNotes;
 
 
