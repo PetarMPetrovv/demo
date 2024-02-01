@@ -14,6 +14,9 @@ public class Customer {
     @ElementCollection
     private List<String> callNotes;
 
+    public Long getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
