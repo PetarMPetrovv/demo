@@ -11,14 +11,26 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    //I have not sure if this need to be here ..
+    //I'm not sure if this need to be here ..
     public void setCustomerRepository(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
     @GetMapping("/")
-    public String home(Model model) {
-        List<Customer> customers = customerRepository.findAll();
-        model.addAttribute("customers", customers);
-        return "home";
+    public String home() {
+        return "index";
+    }
+
+    @GetMapping("/sellers")
+    public String sellers(Model model) {
+        List<Customer> sellers = customerRepository.findSellers(); // Replace with your logic to get sellers
+        model.addAttribute("sellers", sellers);
+        return "sellers";
+    }
+
+    @GetMapping("/buyers")
+    public String buyers(Model model) {
+        List<Customer> buyers = customerRepository.findBuyers(); // Replace with your logic to get buyers
+        model.addAttribute("buyers", buyers);
+        return "buyers";
     }
 }
