@@ -10,7 +10,6 @@ public class Customer {
     private Long id;
     private String name;
     private String phoneNumber;
-    private String linkToPropertyAd;
     @ElementCollection
     private List<String> callNotes;
 
@@ -34,13 +33,6 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getLinkToPropertyAd() {
-        return linkToPropertyAd;
-    }
-
-    public void setLinkToPropertyAd(String linkToPropertyAd) {
-        this.linkToPropertyAd = linkToPropertyAd;
-    }
 
     public List<String> getCallNotes() {
         return callNotes;

@@ -22,14 +22,14 @@ public class CustomerController {
 
     @GetMapping("/sellers")
     public String sellers(Model model) {
-        List<Customer> sellers = customerRepository.findSellers(); // Replace with your logic to get sellers
+        List<Customer> sellers = customerRepository.findSellers();
         model.addAttribute("sellers", sellers);
         return "sellers";
     }
 
     @GetMapping("/buyers")
     public String buyers(Model model) {
-        List<Customer> buyers = customerRepository.findBuyers(); // Replace with your logic to get buyers
+        List<Customer> buyers = customerRepository.findBuyers();
         model.addAttribute("buyers", buyers);
         return "buyers";
     }
