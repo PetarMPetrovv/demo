@@ -16,9 +16,9 @@ public class DataSeeder implements CommandLineRunner {
         // Check if data already exists
         if (customerRepository.count() == 0) {
             // Seed initial data
-            Seller seller1 = new Seller();
-            seller1.setName("John Doe");
-            seller1.setPhoneNumber("1234567890");
+            Buyer buyer1 = new Buyer();
+            buyer1.setName("John Buyer");
+            buyer1.setPhoneNumber("1234567890");
             // set other properties as needed...
 
             Seller seller2 = new Seller();
@@ -27,7 +27,7 @@ public class DataSeeder implements CommandLineRunner {
             // set other properties as needed...
 
             // Save the data to the database
-            customerRepository.save(seller1);
+            customerRepository.save(buyer1);
             customerRepository.save(seller2);
 
             System.out.println("Data seeded successfully!");
