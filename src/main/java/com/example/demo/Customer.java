@@ -8,7 +8,7 @@ import java.util.List;
 @DiscriminatorColumn(name = "customer_type", discriminatorType = DiscriminatorType.STRING)
 public class Customer {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
     private String phoneNumber;
