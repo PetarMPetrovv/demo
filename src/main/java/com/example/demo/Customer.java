@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@MappedSuperclass
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "customer_type", discriminatorType = DiscriminatorType.STRING)
 public class Customer {
