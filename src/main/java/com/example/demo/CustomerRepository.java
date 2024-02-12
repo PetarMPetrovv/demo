@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    List<Customer> findBuyers();
+    List<Buyer> findBuyers();
 
-    List<Customer> findSellers();
+    List<Seller> findSellers();
 
 
 }
