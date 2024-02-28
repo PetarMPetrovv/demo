@@ -1,9 +1,14 @@
 package com.example.demo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Customer {
     @Id
@@ -14,32 +19,4 @@ public class Customer {
     @ElementCollection
     private List<String> callNotes;
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-
-    public List<String> getCallNotes() {
-        return callNotes;
-    }
-
-    public void setCallNotes(List<String> callNotes) {
-        this.callNotes = callNotes;
-    }
 }
