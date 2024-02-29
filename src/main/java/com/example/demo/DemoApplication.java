@@ -14,7 +14,7 @@ public class DemoApplication {
 	}
 
 	@Bean
-	public DataSeeder dataSeeder(CustomerRepository customerRepository) {
+	public DataSeeder dataSeeder(SellerRepository customerRepository) {
 		DataSeeder dataSeeder = new DataSeeder();
 		dataSeeder.setCustomerRepository(customerRepository);
 		return dataSeeder;

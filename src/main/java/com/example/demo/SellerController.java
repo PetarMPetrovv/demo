@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class CustomerController {
+public class SellerController {
     @Autowired
-    private CustomerRepository customerRepository;
+    private SellerRepository customerRepository;
 
     @GetMapping("/")
     public String home() {
@@ -23,10 +23,5 @@ public class CustomerController {
         return "sellers";
     }
 
-    @GetMapping("/buyers")
-    public String buyers(Model model) {
-        List<Buyer> buyers = customerRepository.findBuyers();
-        model.addAttribute("buyers", buyers);
-        return "buyers";
-    }
+
 }

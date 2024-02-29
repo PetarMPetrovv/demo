@@ -1,19 +1,24 @@
 package com.example.demo;
 
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class Seller extends Customer{
-
+@Getter
+@Setter
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Seller {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String phoneNumber;
+    @ElementCollection
+    private List<String> callNotes;
     private String linkToPropertyAd;
 
 
-    public String getLinkToPropertyAd() {
-        return linkToPropertyAd;
-    }
-
-    public void setLinkToPropertyAd(String linkToPropertyAd) {
-        this.linkToPropertyAd = linkToPropertyAd;
-    }
 }
