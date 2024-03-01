@@ -9,7 +9,7 @@ import java.util.List;
 @Controller
 public class SellerController {
     @Autowired
-    private SellerRepository customerRepository;
+    private SellerRepository sellerRepository;
 
     @GetMapping("/")
     public String home() {
@@ -18,7 +18,7 @@ public class SellerController {
 
     @GetMapping("/sellers")
     public String sellers(Model model) {
-        List<Seller> sellers = customerRepository.findSellers();
+        List<Seller> sellers = sellerRepository.findAll();
         model.addAttribute("sellers", sellers);
         return "sellers";
     }
