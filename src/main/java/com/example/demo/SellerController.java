@@ -13,7 +13,7 @@ public class SellerController {
 
     @GetMapping("/")
     public String home() {
-        return "index";
+        return "home";
     }
 
     @GetMapping("/sellers")
@@ -22,6 +22,4 @@ public class SellerController {
         model.addAttribute("sellers", sellers);
         return "sellers";
     }
-
-
 }
