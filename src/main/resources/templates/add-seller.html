@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Seller</title>
+</head>
+<body>
+<h1>Add Seller</h1>
+
+<form action="/save-seller" method="post">
+    <input type="hidden" th:value="${nextId}" name="id"> <!-- Hidden field for ID -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:value="${sellerName}" required><br>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" th:value="${sellerPhoneNumber}" required><br>
+    <label for="linkToPropertyAd">Link to Property Ad:</label>
+    <input type="text" id="linkToPropertyAd" name="linkToPropertyAd" th:value="${sellerLinkToPropertyAd}" required><br>
+    <button type="submit">Save Seller</button>
+</form>
+
+</body>
+</html>
