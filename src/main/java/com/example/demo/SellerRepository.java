@@ -12,4 +12,5 @@ public interface SellerRepository extends JpaRepository<Seller, Long> {
     @Query(value = "SELECT MAX(id) + 1 FROM Seller", nativeQuery = true)
     Integer getNextAvailableId();
 
+    List<Seller> findByPhoneNumber(String phoneNumber);
 }

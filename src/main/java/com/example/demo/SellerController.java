@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -28,8 +29,6 @@ public class SellerController {
     public String showAddSellerForm(Model model) {
         int nextId = sellerRepository.getNextAvailableId();
         model.addAttribute("nextId", nextId);
-
-        // Pre-filling with empty strings for new seller
         model.addAttribute("sellerName", "");
         model.addAttribute("sellerPhoneNumber", "");
         model.addAttribute("sellerLinkToPropertyAd", "");
@@ -41,5 +40,12 @@ public class SellerController {
     public String saveSeller(Seller seller) {
         sellerRepository.save(seller);
         return "redirect:/sellers";
+    }
+
+    @GetMapping("/search")
+    public String searchSellerByPhoneNumber(@RequestParam("phoneNumber") String phoneNumber, Model model) {
+        List<Seller> sellers = sellerRepository.findByPhoneNumber(phoneNumber);
+        model.addAttribute("sellers", sellers);
+        return "sellers";
     }
 }
